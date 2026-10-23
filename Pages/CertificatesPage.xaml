@@ -1,0 +1,74 @@
+﻿<Page x:Class="CertControl.Pages.CertificatesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Сертификаты" IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Grid Margin="20">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel
+            Orientation="Horizontal"
+            Margin="0,0,0,15">
+
+            <TextBlock
+                Text="Сертификаты"
+                FontSize="26"
+                FontWeight="Bold"
+                VerticalAlignment="Center"/>
+
+            <Button
+                Content="Добавить"
+                Width="100"
+                Height="35"
+                Margin="20,0,0,0"
+                x:Name="AddButton"
+                Click="AddButton_Click"/>
+
+            <Button
+                Content="Редактировать"
+                Width="120"
+                Height="35"
+                Margin="10,0,0,0"
+                x:Name="EditButton"
+                Click="EditButton_Click"/>
+
+            <Button
+                Content="Удалить"
+                Width="100"
+                Height="35"
+                Margin="10,0,0,0"
+                x:Name="DeleteButton"
+                Click="DeleteButton_Click"/>
+
+            <Button
+                Content="Обновить"
+                Width="100"
+                Height="35"
+                Margin="10,0,0,0"
+                Click="RefreshButton_Click"/>
+            <TextBlock
+    x:Name="CurrentUserTextBlock"
+    Margin="20,0,0,0"
+    VerticalAlignment="Center"/>
+            <Button
+    Content="Выйти"
+    Width="90"
+    Margin="10,0,0,0"
+    Click="LogoutButton_Click"/>
+
+        </StackPanel>
+
+        <DataGrid
+            x:Name="CertificatesDataGrid"
+            Grid.Row="1"
+            AutoGenerateColumns="True"
+            IsReadOnly="True"
+            SelectionMode="Single"/>
+
+    </Grid>
+
+</Page>
